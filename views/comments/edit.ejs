@@ -1,0 +1,20 @@
+<%- include('../partials/header'); -%>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="text-align: center;"><h1>Edit Comment </h1></div>
+        <div class="col-sm-12">
+            <div style="width: 30%; margin: 25px auto;">
+                <form action="/review/<%= content_id %>/comments/<%= comment._id %>?_method=PUT "  method="POST">
+                    <div class="form-group"><input type="text" class="form-control" name="comment[text]" value="<%= comment.text %> "></div>
+                    <div class="form-group"><button class="btn btn-primary btn-lg btn-block" >Submit!</button></div>                                     
+                </form>
+                <a href="/review">Go back</a>
+            </div>
+        </div>   
+    </div>  
+</div>
+
+
+<%- include('../partials/footer'); -%>

@@ -1,0 +1,19 @@
+#top_head{
+    margin-left: 290px;
+    margin-bottom: 30px;
+}
+
+.fas{
+    color: orange;
+}
+
+.card {
+    height: auto;
+    width: 550px;
+    margin: px;
+    margin-left: 155px;
+}
+
+#delete-form{
+    display: inline;
+}

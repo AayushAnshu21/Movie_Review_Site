@@ -1,0 +1,44 @@
+<%- include('../partials/header'); -%>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="text-align: center;"><h1>Create a new Review</h1></div>
+        <div class="col-sm-12">
+            <div style="width: 30%; margin: 25px auto;">
+                <form action="/review" method="POST">
+                    <div class="form-group"><input type="text" class="form-control" name="review[name]" placeholder="name"></div>
+                    <div class="form-group"> <input type="text" class="form-control" name="review[image]" placeholder="image url "></div>
+                    <div class="form-group">
+                        <label for="review">Review</label>
+                        <textarea name="review[description]" class="form-control" id="review" rows="4"></textarea>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Rating</label>
+                        <select name="review[rating]" class="form-control mb-2" id="exampleFormControlSelect1">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div> 
+                    <div class="form-group">
+                        <label for="ControlSelect1">Catagory</label>
+                        <select name="review[category]" class="form-control mb-2" id="ControlSelect1">
+                          <option>Movie</option>
+                          <option>Tv Show</option>
+                          <option>Anime</option>
+                        </select>
+                    </div> 
+                    <div class="form-group"> <input type="text" class="form-control" name="review[genre]" placeholder="genre "></div>
+                    <div class="form-group"><button class="btn btn-primary btn-lg btn-block" >Submit</button></div>                                    
+                </form>
+                <a href="/review">Go back</a>
+            </div>
+        </div>   
+    </div>  
+</div>
+
+
+<%- include('../partials/footer'); -%>

@@ -1,0 +1,53 @@
+<%- include('../partials/header'); -%>
+
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">MetaReview</p>
+            <div class="list-group">
+                <form action="/review" method="GET">
+                    <button  name="category" value="Movie" type="submit" class="list-group-item list-group-item-action">Movie</button>
+                    <button  name="category" value="Tv Show" type="submit" class="list-group-item list-group-item-action">Tv Show</button>
+                    <button  name="category" value="Anime" type="submit" class="list-group-item list-group-item-action">Anime</button>                
+                </form>
+                <a href="/review/new" class="list-group-item list-group-item-action active">Create New Post</a>                
+            </div>
+        </div>
+
+        <div  class="col-md-9" >
+           <% content.forEach(function(content){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card ">
+                            <img class="card-img-top img-thumbnail" src="<%= content.image %> " alt="Card image cap">
+                            <div class="card-body">
+                                <h3 class="card-title"><%= content.name %> </h5>
+                                <h6 class="font-weight-bold">Genre: <%= content.genre %> </h6>
+                                <p class="card-text"><%- content.description.substring(0,200) %>...<a href="/review/<%=content._id%>" class="text-primary">Read more</a>  </p>
+                            </div>                            
+                             
+                            <div class="card-footer text-muted">
+                                <p>Rating: 
+                                    <% for(var i=0;i<content.rating;i++){ %>
+                                        <span class="fas fa-star "></span>
+                                    <% } %>
+                                    <% for(var j=0;j<5-content.rating;j++){ %>
+                                        <span class="far fa-star "></span>
+                                    <% } %>
+                                </p>
+                                <p><span class="text-left"><%= content.author.username %></span> <span class="float-right"><%= content.date.toDateString() %> </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          <% }) %>              
+        </div>
+</div>
+</div>
+
+
+
+
+
+<%- include('../partials/footer'); -%>
